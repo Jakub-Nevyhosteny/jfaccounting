@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>General Ledger s.r.o. | Účetní a daňové služby</title>
+<meta name="description" content="Profesionální účetní a daňové služby pro podnikatelské subjekty. Ušetříme vám čas i starosti s účetnictvím, abyste se mohli plně soustředit na své podnikání.">
+<meta name="theme-color" content="#09205a">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="General Ledger s.r.o. | Účetní a daňové služby">
+<meta property="og:description" content="Profesionální účetní a daňové služby pro podnikatelské subjekty. Ušetříme vám čas i starosti s účetnictvím.">
+<meta property="og:image" content="brand_assets/GL_logo.png">
+<meta property="og:locale" content="cs_CZ">
+
+<link rel="icon" type="image/png" href="brand_assets/GL_fav.png">
+<link rel="canonical" href="https://www.generalledger.cz/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          navy: {
+            DEFAULT: '#09205a',
+            50: '#eef1f8',
+            100: '#dbe2f1',
+            200: '#b0bede',
+            300: '#7c8fbd',
+            400: '#4a5e94',
+            500: '#243b73',
+            600: '#152c62',
+            700: '#0d2761',
+            800: '#0a2350',
+            900: '#09205a',
+            950: '#060f2c'
+          },
+          accent: {
+            DEFAULT: '#2e89e1',
+            50: '#eef7fd',
+            100: '#d9ecfb',
+            200: '#b3d9f7',
+            300: '#7fc0f2',
+            400: '#4fa3ea',
+            500: '#2e89e1',
+            600: '#1f6fc0',
+            700: '#1a5a9d',
+            800: '#164a80',
+            900: '#0f3660'
+          }
+        },
+        fontFamily: {
+          display: ['Outfit', 'sans-serif'],
+          body: ['Manrope', 'sans-serif']
+        },
+        maxWidth: {
+          container: '1240px'
+        }
+      }
+    }
+  };
+</script>
+
+<link rel="stylesheet" href="style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AccountingService",
+  "name": "General Ledger s.r.o.",
+  "description": "Profesionální účetní a daňové služby pro podnikatelské subjekty.",
+  "telephone": "+420775916171",
+  "email": "jan.flanderka@outlook.com",
+  "areaServed": "CZ",
+  "image": "brand_assets/GL_logo.png",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Všelibice 68",
+    "postalCode": "463 48",
+    "addressCountry": "CZ"
+  }
+}
+</script>
+</head>
+<body class="font-body text-ink bg-white antialiased">
+
+<a href="#hlavni-obsah" class="skip-link">Přejít na hlavní obsah</a>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header" id="header">
+  <div class="max-w-container mx-auto px-6 lg:px-10">
+    <div class="flex items-center justify-between h-[76px]">
+      <a href="#top" class="flex items-center gap-2.5 shrink-0 group" aria-label="General Ledger s.r.o., domů">
+        <img src="brand_assets/GL_logo.png" alt="General Ledger s.r.o." class="h-9 md:h-10 w-auto select-none" draggable="false">
+      </a>
+
+      <nav class="nav-desktop" aria-label="Hlavní navigace">
+        <a href="#top" class="nav-link">Domů</a>
+        <a href="#sluzby" class="nav-link">Služby</a>
+        <a href="#proc-my" class="nav-link">Proč my</a>
+        <a href="#kontakt" class="nav-link">Kontakt</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="tel:+420775916171" class="header-phone">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 3.5h3.2c.4 0 .8.3.9.7l1 3.3c.1.4 0 .8-.3 1.1L7.8 10c1 2.3 2.9 4.2 5.2 5.2l1.4-1.5c.3-.3.7-.4 1.1-.3l3.3 1c.4.1.7.5.7.9v3.2c0 .6-.5 1-1 1C10.4 19.5 4.5 13.6 4.5 4.5c0-.5.4-1 1-1Z"/></svg>
+          <span>+420&nbsp;775&nbsp;916&nbsp;171</span>
+        </a>
+        <a href="#kontakt" class="btn btn-primary btn-sm hidden sm:inline-flex">Nezávazná poptávka</a>
+
+        <button id="menuToggle" class="menu-toggle" aria-label="Otevřít menu" aria-expanded="false" aria-controls="mobileNav">
+          <span class="menu-line"></span>
+          <span class="menu-line"></span>
+          <span class="menu-line"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="mobileNav" class="mobile-nav" aria-hidden="true">
+    <nav class="flex flex-col gap-1 px-6 py-6" aria-label="Mobilní navigace">
+      <a href="#top" class="mobile-nav-link">Domů</a>
+      <a href="#sluzby" class="mobile-nav-link">Služby</a>
+      <a href="#proc-my" class="mobile-nav-link">Proč my</a>
+      <a href="#kontakt" class="mobile-nav-link">Kontakt</a>
+      <a href="tel:+420775916171" class="mobile-nav-link mobile-nav-phone">+420 775 916 171</a>
+      <a href="#kontakt" class="btn btn-primary btn-lg w-full justify-center mt-3">Nezávazná poptávka</a>
+    </nav>
+  </div>
+</header>
+
+<main id="hlavni-obsah">
+
+  <!-- ===== HERO ===== -->
+  <section id="top" class="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="hero-photo"></div>
+      <div class="hero-blob hero-blob-1"></div>
+      <div class="hero-blob hero-blob-2"></div>
+      <div class="hero-grid"></div>
+      <div class="hero-noise"></div>
+      <div class="hero-fade-bottom"></div>
+    </div>
+
+    <div class="max-w-container mx-auto px-6 lg:px-10 relative">
+      <div class="grid lg:grid-cols-[1.05fr_0.95fr] gap-16 lg:gap-10 items-center pt-36 pb-24 lg:pt-40 lg:pb-32">
+
+        <div class="reveal">
+          <h1 class="hero-title">
+            Váš byznys.<br>
+            <span class="text-accent-grad">Naše účetnictví.</span>
+          </h1>
+
+          <p class="hero-lead">
+            Poskytujeme profesionální účetní a daňové služby pro podnikatelské subjekty.
+            Ušetříme vám čas i starosti s účetnictvím, abyste se mohli plně soustředit
+            na své podnikání.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4 mt-10">
+            <a href="#kontakt" class="btn btn-primary btn-lg">Kontaktujte nás</a>
+            <a href="#sluzby" class="btn btn-ghost btn-lg">
+              Naše služby
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
+
+        </div>
+
+        <div class="reveal relative">
+          <div class="hero-panel">
+            <div class="hero-card">
+              <div class="hero-card-head">
+                <span class="hero-card-title">Měsíční přehled</span>
+                <span class="hero-card-badge">Aktuální</span>
+              </div>
+              <ul class="hero-card-list">
+                <li>
+                  <span class="hero-check">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                  </span>
+                  <span>Přiznání k DPH</span>
+                  <span class="hero-status">Hotovo</span>
+                </li>
+                <li>
+                  <span class="hero-check">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                  </span>
+                  <span>Zpracování mezd</span>
+                  <span class="hero-status">Hotovo</span>
+                </li>
+                <li>
+                  <span class="hero-check">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                  </span>
+                  <span>Uzávěrka měsíce</span>
+                  <span class="hero-status">Hotovo</span>
+                </li>
+              </ul>
+              <div class="hero-card-bars" aria-hidden="true">
+                <span style="--h:38%"></span>
+                <span style="--h:62%"></span>
+                <span style="--h:48%"></span>
+                <span style="--h:80%"></span>
+                <span style="--h:56%"></span>
+                <span style="--h:70%"></span>
+                <span style="--h:44%"></span>
+              </div>
+            </div>
+
+            <div class="hero-badge-float">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4.5 6v5.5c0 4.6 3.2 8.4 7.5 9.5 4.3-1.1 7.5-4.9 7.5-9.5V6L12 3Z"/><path d="m9 12 2 2 4-4"/></svg>
+              <span>Spolehlivě a včas</span>
+            </div>
+
+            <svg class="hero-mark" viewBox="0 0 200 160" aria-hidden="true">
+              <path d="M100 40 30 20v100c30 4 55 10 70 20V60c15-10 40-16 70-20V120c-15 0-40 6-70 20" fill="none" stroke="currentColor" stroke-width="3"/>
+            </svg>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES ===== -->
+  <section id="sluzby" class="section">
+    <div class="max-w-container mx-auto px-6 lg:px-10">
+      <div class="section-head reveal">
+        <h2 class="section-title">Naše služby</h2>
+        <p class="section-lead">
+          Kompletní účetní servis pro váš byznys, od vedení účetnictví
+          po strategické daňové a personální poradenství.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-5 lg:gap-6 mt-16">
+
+        <div class="service-card reveal">
+          <div class="service-media">
+            <div class="service-media-clip">
+              <img src="brand_assets/services/ucetnictvi-web.jpg" alt="Zpracování účetních dokladů a finančních přehledů" loading="lazy" decoding="async">
+              <span class="service-media-shade" aria-hidden="true"></span>
+              <span class="service-media-tint" aria-hidden="true"></span>
+            </div>
+            <span class="service-icon-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5c2.5-1 5-1 7 0v13c-2-1-4.5-1-7 0v-13Z"/><path d="M18 5.5c-2.5-1-5-1-7 0v13c2-1 4.5-1 7 0v-13Z"/></svg>
+            </span>
+          </div>
+          <div class="service-body">
+            <h3 class="service-title">Vedení účetnictví</h3>
+            <p class="service-text">
+              Kompletní zpracování jednoduchého i podvojného účetnictví,
+              přesně a v souladu s aktuální legislativou.
+            </p>
+          </div>
+        </div>
+
+        <div class="service-card reveal reveal-delay-1">
+          <div class="service-media">
+            <div class="service-media-clip">
+              <img src="brand_assets/services/dane-web.jpg" alt="Daňová přiznání a formuláře pro daňové poradenství" loading="lazy" decoding="async">
+              <span class="service-media-shade" aria-hidden="true"></span>
+              <span class="service-media-tint" aria-hidden="true"></span>
+            </div>
+            <span class="service-icon-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="7.5" r="2.5"/><circle cx="16.5" cy="16.5" r="2.5"/><path d="M5 19 19 5"/></svg>
+            </span>
+          </div>
+          <div class="service-body">
+            <h3 class="service-title">Daňové poradenství</h3>
+            <p class="service-text">
+              Daňová přiznání a optimalizace daňové zátěže šité na míru
+              vašemu podnikání.
+            </p>
+          </div>
+        </div>
+
+        <div class="service-card reveal reveal-delay-2">
+          <div class="service-media">
+            <div class="service-media-clip">
+              <img src="brand_assets/services/mzdy-web.jpg" alt="Zpracování mezd a personální agendy" loading="lazy" decoding="async">
+              <span class="service-media-shade" aria-hidden="true"></span>
+              <span class="service-media-tint" aria-hidden="true"></span>
+            </div>
+            <span class="service-icon-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7.5" r="3"/><path d="M3.5 19.5c0-3.3 2.5-5.5 5.5-5.5s5.5 2.2 5.5 5.5"/><path d="M16 8.2a2.7 2.7 0 1 1 0 5.3"/><path d="M17.5 14c2.2.4 3.5 2 3.5 4.3"/></svg>
+            </span>
+          </div>
+          <div class="service-body">
+            <h3 class="service-title">Mzdy a personalistika</h3>
+            <p class="service-text">
+              Zpracování mezd, evidence zaměstnanců a veškerá personální
+              agenda bez starostí.
+            </p>
+          </div>
+        </div>
+
+        <div class="service-card reveal reveal-delay-3">
+          <div class="service-media">
+            <div class="service-media-clip">
+              <img src="brand_assets/services/konzultace-web.jpg" alt="Konzultace nad finančními a obchodními podklady" loading="lazy" decoding="async">
+              <span class="service-media-shade" aria-hidden="true"></span>
+              <span class="service-media-tint" aria-hidden="true"></span>
+            </div>
+            <span class="service-icon-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4a5.5 5.5 0 0 0-3 10.1c.4.3.6.7.6 1.2v1.2h4.8v-1.2c0-.5.2-.9.6-1.2A5.5 5.5 0 0 0 12 4Z"/><path d="M9.6 19.5h4.8M10.3 21.5h3.4"/></svg>
+            </span>
+          </div>
+          <div class="service-body">
+            <h3 class="service-title">Konzultace a poradenství</h3>
+            <p class="service-text">
+              Individuální konzultace při klíčových finančních
+              a obchodních rozhodnutích vaší firmy.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="text-center mt-12 reveal">
+        <a href="#kontakt" class="link-arrow">
+          Nenašli jste, co hledáte?<br class="sm:hidden">
+          <span class="link-arrow-cta">
+            Ozvěte se nám
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </span>
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== PROCESS ===== -->
+  <section id="proces" class="section section-alt">
+    <div class="max-w-container mx-auto px-6 lg:px-10">
+      <div class="section-head reveal">
+        <h2 class="section-title">Spolupráce ve třech krocích</h2>
+        <p class="section-lead">
+          Jednoduchý začátek bez zbytečné administrativy, o zbytek se
+          postaráme my.
+        </p>
+      </div>
+
+      <div class="process-row mt-16">
+        <div class="process-step reveal">
+          <span class="process-number">01</span>
+          <h3 class="process-title">Nezávazná konzultace</h3>
+          <p class="process-text">
+            Probereme potřeby vaší firmy a navrhneme řešení šité na míru.
+          </p>
+        </div>
+        <div class="process-step reveal reveal-delay-1">
+          <span class="process-number">02</span>
+          <h3 class="process-title">Nastavení spolupráce</h3>
+          <p class="process-text">
+            Domluvíme si předávání podkladů, termíny i způsob komunikace.
+          </p>
+        </div>
+        <div class="process-step reveal reveal-delay-2">
+          <span class="process-number">03</span>
+          <h3 class="process-title">Pravidelná péče</h3>
+          <p class="process-text">
+            Postaráme se o účetnictví, mzdy i daně, vy se soustředíte na byznys.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY US ===== -->
+  <section id="proc-my" class="section">
+    <div class="max-w-container mx-auto px-6 lg:px-10">
+      <div class="section-head reveal">
+        <h2 class="section-title">Proč si vybrat právě nás</h2>
+        <p class="section-lead">
+          Účetnictví je otázka důvěry. Tady jsou důvody, proč nám ji
+          klienti dávají.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5 mt-16">
+
+        <div class="feature-card reveal">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c0-3.6 3.1-6 7-6s7 2.4 7 6"/><path d="m9.5 9.5 1.7 1.7 3-3.2"/></svg>
+          </div>
+          <h3 class="feature-title">Osobní přístup</h3>
+          <p class="feature-text">
+            Každému klientovi věnujeme individuální péči a čas,
+            který jeho podnikání zaslouží.
+          </p>
+        </div>
+
+        <div class="feature-card reveal reveal-delay-1">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 13.7-5.7L20 8"/><path d="M20 4v4h-4"/><path d="M20 12a8 8 0 0 1-13.7 5.7L4 16"/><path d="M4 20v-4h4"/></svg>
+          </div>
+          <h3 class="feature-title">Flexibilita</h3>
+          <p class="feature-text">
+            Přizpůsobíme se vašemu rozvrhu, komunikaci i specifickým
+            potřebám vaší firmy.
+          </p>
+        </div>
+
+        <div class="feature-card reveal reveal-delay-2">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8.5" r="4.5"/><path d="m8.5 12.5-1.8 7L12 17l5.3 2.5-1.8-7"/></svg>
+          </div>
+          <h3 class="feature-title">Zkušenosti</h3>
+          <p class="feature-text">
+            Dlouholetá praxe v oboru nám dává hluboké porozumění
+            potřebám podnikatelů.
+          </p>
+        </div>
+
+        <div class="feature-card reveal reveal-delay-3">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V7l8-3 8 3v12"/><path d="M4 19h16"/><path d="M12 4v13"/><path d="M8 11.5c1.3-1 2.7-1 4 0M12 11.5c1.3-1 2.7-1 4 0"/></svg>
+          </div>
+          <h3 class="feature-title">Aktuální znalosti</h3>
+          <p class="feature-text">
+            Průběžně se vzděláváme a sledujeme veškeré změny v daňové
+            a účetní legislativě.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA BANNER ===== -->
+  <section class="cta-banner">
+    <div class="hero-noise" aria-hidden="true"></div>
+    <div class="cta-blob cta-blob-1" aria-hidden="true"></div>
+    <div class="cta-blob cta-blob-2" aria-hidden="true"></div>
+    <svg class="cta-mark" viewBox="0 0 200 160" aria-hidden="true">
+      <path d="M100 40 30 20v100c30 4 55 10 70 20V60c15-10 40-16 70-20V120c-15 0-40 6-70 20" fill="none" stroke="currentColor" stroke-width="3"/>
+    </svg>
+
+    <div class="max-w-container mx-auto px-6 lg:px-10 relative text-center reveal">
+      <h2 class="cta-title">Co o nás říkají naši klienti</h2>
+
+      <div class="reviews-strip-grid cta-reviews-grid">
+        <blockquote class="reviews-strip-card reveal">
+          <svg class="reviews-strip-quote-mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.5 7C6.46 7 4 9.46 4 12.5S6.46 18 9.5 18c.34 0 .67-.03 1-.09-.6 1.6-2.1 2.8-3.9 3.09v2c3.5-.4 6.4-3.1 6.4-7V12.5C13 9.46 12.04 7 9.5 7zm10 0c-3.04 0-5.5 2.46-5.5 5.5S16.46 18 19.5 18c.34 0 .67-.03 1-.09-.6 1.6-2.1 2.8-3.9 3.09v2c3.5-.4 6.4-3.1 6.4-7V12.5C23 9.46 22.04 7 19.5 7z"/></svg>
+          <p class="reviews-strip-quote">Konečně přehled v účetnictví, aniž bych musela řešit každý detail sama. Komunikace je rychlá a vše sedí.</p>
+          <footer class="reviews-strip-author">
+            <span class="reviews-strip-author-name">Jméno Příjmení</span>
+            <span class="reviews-strip-author-role">Klient s.r.o.</span>
+          </footer>
+        </blockquote>
+
+        <blockquote class="reviews-strip-card reveal reveal-delay-1">
+          <svg class="reviews-strip-quote-mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.5 7C6.46 7 4 9.46 4 12.5S6.46 18 9.5 18c.34 0 .67-.03 1-.09-.6 1.6-2.1 2.8-3.9 3.09v2c3.5-.4 6.4-3.1 6.4-7V12.5C13 9.46 12.04 7 9.5 7zm10 0c-3.04 0-5.5 2.46-5.5 5.5S16.46 18 19.5 18c.34 0 .67-.03 1-.09-.6 1.6-2.1 2.8-3.9 3.09v2c3.5-.4 6.4-3.1 6.4-7V12.5C23 9.46 22.04 7 19.5 7z"/></svg>
+          <p class="reviews-strip-quote">Přiznání i uzávěrky teď stíháme bez stresu a vždy včas. Doporučujeme každému, kdo chce mít klid.</p>
+          <footer class="reviews-strip-author">
+            <span class="reviews-strip-author-name">Jméno Příjmení</span>
+            <span class="reviews-strip-author-role">Klient s.r.o.</span>
+          </footer>
+        </blockquote>
+
+        <blockquote class="reviews-strip-card reveal reveal-delay-2">
+          <svg class="reviews-strip-quote-mark" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9.5 7C6.46 7 4 9.46 4 12.5S6.46 18 9.5 18c.34 0 .67-.03 1-.09-.6 1.6-2.1 2.8-3.9 3.09v2c3.5-.4 6.4-3.1 6.4-7V12.5C13 9.46 12.04 7 9.5 7zm10 0c-3.04 0-5.5 2.46-5.5 5.5S16.46 18 19.5 18c.34 0 .67-.03 1-.09-.6 1.6-2.1 2.8-3.9 3.09v2c3.5-.4 6.4-3.1 6.4-7V12.5C23 9.46 22.04 7 19.5 7z"/></svg>
+          <p class="reviews-strip-quote">Oceňujeme, že nám vše vysvětlí srozumitelně a poradí i s věcmi, na které bychom sami nepřišli.</p>
+          <footer class="reviews-strip-author">
+            <span class="reviews-strip-author-name">Jméno Příjmení</span>
+            <span class="reviews-strip-author-role">Klient s.r.o.</span>
+          </footer>
+        </blockquote>
+      </div>
+
+      <p class="cta-text">
+        Ozvěte se nám a probereme, jak můžeme pomoct i vám.
+      </p>
+      <a href="#kontakt" class="btn btn-on-dark btn-lg mt-8">Nezávazná poptávka</a>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="kontakt" class="section">
+    <div class="max-w-container mx-auto px-6 lg:px-10">
+      <div class="section-head reveal">
+        <h2 class="section-title">Ozvěte se nám</h2>
+        <p class="section-lead">
+          Máte dotaz nebo zájem o spolupráci? Napište nebo zavolejte,
+          ozveme se vám co nejdříve.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-[0.85fr_1.15fr] gap-6 lg:gap-8 mt-16">
+
+        <div class="contact-info reveal">
+
+          <a href="https://www.google.com/maps/search/?api=1&query=V%C5%A1elibice%2068%2C%20463%2048" target="_blank" rel="noopener" class="contact-info-item">
+            <span class="contact-info-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.6 7-11.5A7 7 0 0 0 5 9.5C5 14.4 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+            </span>
+            <span>
+              <span class="contact-info-label">Adresa</span>
+              <span class="contact-info-value">Všelibice 68, 463 48</span>
+            </span>
+          </a>
+
+          <a href="tel:+420775916171" class="contact-info-item">
+            <span class="contact-info-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 3.5h3.2c.4 0 .8.3.9.7l1 3.3c.1.4 0 .8-.3 1.1L7.8 10c1 2.3 2.9 4.2 5.2 5.2l1.4-1.5c.3-.3.7-.4 1.1-.3l3.3 1c.4.1.7.5.7.9v3.2c0 .6-.5 1-1 1C10.4 19.5 4.5 13.6 4.5 4.5c0-.5.4-1 1-1Z"/></svg>
+            </span>
+            <span>
+              <span class="contact-info-label">Telefon</span>
+              <span class="contact-info-value">+420 775 916 171</span>
+            </span>
+          </a>
+
+          <a href="mailto:jan.flanderka@outlook.com" class="contact-info-item">
+            <span class="contact-info-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.5" width="17" height="13" rx="2"/><path d="m4.5 7 7.5 5.5L19.5 7"/></svg>
+            </span>
+            <span>
+              <span class="contact-info-label">E-mail</span>
+              <span class="contact-info-value">jan.flanderka@outlook.com</span>
+            </span>
+          </a>
+
+        </div>
+
+        <div class="contact-map reveal reveal-delay-1">
+          <iframe
+            src="https://www.google.com/maps?q=V%C5%A1elibice%2068%2C%20463%2048&output=embed"
+            title="Mapa, sídlo General Ledger s.r.o., Všelibice 68, 463 48"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="max-w-container mx-auto px-6 lg:px-10 pt-16 pb-8">
+    <div class="grid md:grid-cols-[1.2fr_0.8fr_0.8fr] gap-12">
+      <div>
+        <img src="brand_assets/GL_logo.png" alt="General Ledger s.r.o." class="h-9 w-auto footer-logo">
+        <p class="footer-text">
+          Profesionální účetní a daňové služby pro podnikatelské subjekty.
+        </p>
+        <div class="footer-legal">
+          <p>IČ: 24508039</p>
+          <p>DIČ: CZ24508039</p>
+          <p>Zapsána pod značkou C 442443/MSPH Městským soudem v Praze</p>
+          <p>Sídlo: Kubelíkova 1258/43, Žižkov, 130 00 Praha 3</p>
+        </div>
+      </div>
+
+      <div>
+        <span class="footer-heading">Navigace</span>
+        <nav class="flex flex-col gap-0.5 mt-4" aria-label="Navigace v patičce">
+          <a href="#top" class="footer-link">Domů</a>
+          <a href="#sluzby" class="footer-link">Služby</a>
+          <a href="#proc-my" class="footer-link">Proč my</a>
+          <a href="#kontakt" class="footer-link">Kontakt</a>
+        </nav>
+      </div>
+
+      <div>
+        <span class="footer-heading">Kontakt</span>
+        <div class="flex flex-col gap-0.5 mt-4">
+          <a href="tel:+420775916171" class="footer-link">+420 775 916 171</a>
+          <a href="mailto:jan.flanderka@outlook.com" class="footer-link">jan.flanderka@outlook.com</a>
+        </div>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/jfaccounting.cz/" target="_blank" rel="noopener noreferrer" aria-label="General Ledger s.r.o. na Facebooku" class="footer-social-link">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.494v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.294h6.116c.73 0 1.323-.593 1.323-1.324v-21.351c0-.732-.593-1.325-1.325-1.325z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> General Ledger s.r.o. Všechna práva vyhrazena.</span>
+      <span class="footer-credit">Vytvořil Jakub Nevyhoštěný</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
