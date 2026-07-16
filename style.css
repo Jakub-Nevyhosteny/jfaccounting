@@ -1300,6 +1300,8 @@ html.consent-lock body {
 .cookie-consent-actions .btn { flex: 1 1 auto; }
 
 .footer-cookie-link {
+  display: inline-block;
+  white-space: nowrap;
   color: inherit;
   font: inherit;
   text-decoration: underline;
@@ -1309,6 +1311,22 @@ html.consent-lock body {
   transition: color 200ms var(--ease-spring);
 }
 .footer-cookie-link:hover { color: #fff; }
+
+.footer-copyright { white-space: nowrap; }
+
+.footer-legal-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  row-gap: 0.35rem;
+}
+.footer-legal-row > * + *::before {
+  content: "\00B7";
+  display: inline-block;
+  margin: 0 0.5rem;
+  color: rgba(199, 212, 238, 0.4);
+}
 
 /* ==========================================================================
    Footer
@@ -1409,7 +1427,13 @@ html.consent-lock body {
   .hero-panel { padding: 0.5rem; }
   .contact-map { min-height: 320px; }
   .footer-bottom { flex-direction: column; text-align: center; }
+  .footer-legal-row { flex-direction: column; row-gap: 0.5rem; }
+  .footer-legal-row > * + *::before { content: none; }
   .contact-info-item { padding: 1.1rem 1.1rem; gap: 0.85rem; }
   .contact-info-label { font-size: 0.76rem; }
   .contact-info-value { font-size: 0.95rem; }
+}
+
+@media (max-width: 360px) {
+  .contact-info-value { font-size: 0.87rem; }
 }
