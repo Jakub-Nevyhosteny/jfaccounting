@@ -60,6 +60,121 @@
     });
   });
 
+  // Cookie consent (gates the Google Maps embed in the contact section).
+  // Nothing under data-map-src is ever requested until the user explicitly
+  // accepts — the iframe element itself is only created at that point.
+  // Only index.html has the map/banner markup, so this whole block is
+  // skipped on pages (like the legal page) that don't include it.
+  const consentBanner = document.getElementById('cookieConsent');
+  const mapContainer = document.getElementById('contactMap');
+
+  if (consentBanner && mapContainer) {
+    const CONSENT_KEY = 'gl-map-consent';
+    const CONSENT_MAX_AGE_MS = 180 * 24 * 60 * 60 * 1000; // re-ask after ~6 months
+    const consentAcceptBtn = document.getElementById('cookieAccept');
+    const consentRejectBtn = document.getElementById('cookieReject');
+    const consentSettingsLink = document.getElementById('cookieSettingsLink');
+    const mapPlaceholder = document.getElementById('contactMapPlaceholder');
+    const mapEnableBtn = document.getElementById('contactMapEnable');
+
+    const getConsent = () => {
+      try {
+        const raw = localStorage.getItem(CONSENT_KEY);
+        if (!raw) return null;
+        const parsed = JSON.parse(raw);
+        if (!parsed || (parsed.value !== 'granted' && parsed.value !== 'denied')) return null;
+        if (Date.now() - parsed.ts > CONSENT_MAX_AGE_MS) return null; // expired — ask again
+        return parsed.value;
+      } catch (err) {
+        return null; // storage unavailable or an old/unrecognized format
+      }
+    };
+
+    const setConsent = (value) => {
+      try {
+        localStorage.setItem(CONSENT_KEY, JSON.stringify({ value, ts: Date.now() }));
+      } catch (err) {
+        /* storage unavailable — the choice still applies for this page view */
+      }
+    };
+
+    const lockScroll = () => document.documentElement.classList.add('consent-lock');
+    const unlockScroll = () => document.documentElement.classList.remove('consent-lock');
+
+    const loadMap = () => {
+      if (mapContainer.querySelector('iframe')) return;
+      const iframe = document.createElement('iframe');
+      iframe.src = mapContainer.dataset.mapSrc;
+      iframe.title = mapContainer.dataset.mapTitle;
+      iframe.loading = 'lazy';
+      iframe.referrerPolicy = 'no-referrer-when-downgrade';
+      mapContainer.innerHTML = '';
+      mapContainer.appendChild(iframe);
+    };
+
+    const showMapPlaceholder = () => {
+      if (!mapContainer.contains(mapPlaceholder)) {
+        mapContainer.innerHTML = '';
+        mapContainer.appendChild(mapPlaceholder);
+      }
+    };
+
+    const openConsentBanner = () => {
+      consentBanner.hidden = false;
+      lockScroll();
+      consentAcceptBtn.focus();
+    };
+
+    const closeConsentBanner = () => {
+      consentBanner.hidden = true;
+      unlockScroll();
+    };
+
+    const requestsSettings = new URLSearchParams(window.location.search).get('cookies') === 'open';
+    const clearSettingsRequest = () => {
+      const params = new URLSearchParams(window.location.search);
+      params.delete('cookies');
+      const newSearch = params.toString();
+      const newUrl = window.location.pathname + (newSearch ? `?${newSearch}` : '') + window.location.hash;
+      window.history.replaceState({}, '', newUrl);
+    };
+
+    const initialConsent = getConsent();
+    if (initialConsent === 'granted') {
+      loadMap();
+    } else {
+      showMapPlaceholder();
+    }
+
+    if (requestsSettings) {
+      openConsentBanner();
+      clearSettingsRequest();
+    } else if (initialConsent === null) {
+      openConsentBanner();
+    }
+
+    consentAcceptBtn.addEventListener('click', () => {
+      setConsent('granted');
+      loadMap();
+      closeConsentBanner();
+    });
+
+    consentRejectBtn.addEventListener('click', () => {
+      setConsent('denied');
+      showMapPlaceholder();
+      closeConsentBanner();
+    });
+
+    mapEnableBtn.addEventListener('click', () => {
+      setConsent('granted');
+      loadMap();
+    });
+
+    if (consentSettingsLink) {
+      consentSettingsLink.addEventListener('click', () => openConsentBanner());
+    }
+  }
+
   // Reveal-on-scroll
   const revealEls = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window && revealEls.length) {

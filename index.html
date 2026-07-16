@@ -528,13 +528,12 @@
 
         </div>
 
-        <div class="contact-map reveal reveal-delay-1">
-          <iframe
-            src="https://www.google.com/maps?q=V%C5%A1elibice%2068%2C%20463%2048&output=embed"
-            title="Mapa, sídlo General Ledger s.r.o., Všelibice 68, 463 48"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
+        <div class="contact-map reveal reveal-delay-1" id="contactMap" data-map-title="Mapa, sídlo General Ledger s.r.o., Všelibice 68, 463 48" data-map-src="https://www.google.com/maps?q=V%C5%A1elibice%2068%2C%20463%2048&output=embed">
+          <div class="contact-map-placeholder" id="contactMapPlaceholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="contact-map-placeholder-icon" aria-hidden="true"><path d="M12 21s7-6.6 7-11.5A7 7 0 0 0 5 9.5C5 14.4 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+            <p>Mapa je poskytována službou Google Maps a zobrazí se až po udělení souhlasu s cookies.</p>
+            <button type="button" id="contactMapEnable" class="btn btn-ghost btn-sm">Povolit mapu</button>
+          </div>
         </div>
 
       </div>
@@ -585,11 +584,34 @@
     </div>
 
     <div class="footer-bottom">
-      <span>&copy; <span id="year"></span> General Ledger s.r.o. Všechna práva vyhrazena.</span>
+      <span>&copy; <span id="year"></span> General Ledger s.r.o. · <a href="zasady-zpracovani-osobnich-udaju.html" class="footer-cookie-link">Zásady zpracování osobních údajů</a> · <button type="button" id="cookieSettingsLink" class="footer-cookie-link">Nastavení cookies</button></span>
       <span class="footer-credit">Vytvořil Jakub Nevyhoštěný</span>
     </div>
   </div>
 </footer>
+
+<!-- ===== COOKIE CONSENT ===== -->
+<div class="cookie-consent" id="cookieConsent" role="dialog" aria-modal="true" aria-labelledby="cookieConsentTitle" aria-describedby="cookieConsentText" hidden>
+  <div class="cookie-consent-panel">
+    <span class="cookie-consent-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.5A8.5 8.5 0 1 1 11.5 3c-.35 1.4.6 2.8 2 2.8s2.5-1 3.2-.4c.6.5.3 1.6 1 2.2.7.6 1.9-.1 2.5.6.6.7-.4 1.7.3 2.4.5.5 1.2.4 1.6.3-.05.2-.1.4-.1.6Z"/>
+        <circle cx="9" cy="10.5" r="1" fill="currentColor" stroke="none"/>
+        <circle cx="13" cy="14.5" r="1" fill="currentColor" stroke="none"/>
+        <circle cx="9.5" cy="16" r="1" fill="currentColor" stroke="none"/>
+        <circle cx="15" cy="10" r="1" fill="currentColor" stroke="none"/>
+      </svg>
+    </span>
+    <h2 id="cookieConsentTitle" class="cookie-consent-title">Tento web používá cookies</h2>
+    <p id="cookieConsentText" class="cookie-consent-text">
+      Součástí stránky je interaktivní mapa Google Maps, která může ukládat cookies do vašeho prohlížeče. Přijetím souhlasíte s jejich použitím. Více informací najdete v <a href="zasady-zpracovani-osobnich-udaju.html" class="cookie-consent-link">zásadách zpracování osobních údajů</a>.
+    </p>
+    <div class="cookie-consent-actions">
+      <button type="button" id="cookieReject" class="btn btn-ghost btn-sm">Odmítnout</button>
+      <button type="button" id="cookieAccept" class="btn btn-primary btn-sm">Přijmout cookies</button>
+    </div>
+  </div>
+</div>
 
 <script src="script.js"></script>
 </body>
