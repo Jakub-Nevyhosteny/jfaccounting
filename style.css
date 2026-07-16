@@ -1123,6 +1123,6 @@ a.contact-info-item:hover {
   .contact-map { min-height: 320px; }
   .footer-bottom { flex-direction: column; text-align: center; }
   .contact-info-item { padding: 1.1rem 1.1rem; gap: 0.85rem; }
-  .contact-info-label { font-size: 0.72rem; }
-  .contact-info-value { font-size: 0.8rem; }
+  .contact-info-label { font-size: 0.76rem; }
+  .contact-info-value { font-size: 0.95rem; }
 }
