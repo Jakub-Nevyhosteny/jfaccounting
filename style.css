@@ -365,59 +365,6 @@ button { font-family: inherit; cursor: pointer; }
   margin-top: 1.5rem;
 }
 
-/* Client pull-quotes inside the CTA banner, under the "what clients say"
-   heading — cards stay left-aligned even though the banner text is centered. */
-.reviews-strip-grid {
-  margin-top: 2.25rem;
-  display: grid;
-  gap: 1.25rem;
-}
-@media (min-width: 768px) {
-  .reviews-strip-grid { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-}
-.cta-reviews-grid {
-  text-align: left;
-  margin-bottom: 2.75rem;
-}
-
-.reviews-strip-card {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 18px;
-  padding: 1.75rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1.1rem;
-  transition: transform 260ms var(--ease-spring), border-color 260ms var(--ease-spring), background-color 260ms var(--ease-spring);
-}
-.reviews-strip-card:hover {
-  transform: translateY(-3px);
-  background: rgba(255,255,255,0.08);
-  border-color: rgba(255,255,255,0.18);
-}
-.reviews-strip-quote-mark { width: 26px; height: 26px; color: var(--blue); opacity: 0.9; }
-.reviews-strip-quote {
-  margin: 0;
-  color: #e3e9f7;
-  font-size: 0.98rem;
-  line-height: 1.7;
-}
-.reviews-strip-author {
-  display: flex;
-  flex-direction: column;
-  gap: 0.15rem;
-  margin-top: auto;
-  padding-top: 1rem;
-  border-top: 1px solid rgba(255,255,255,0.08);
-}
-.reviews-strip-author-name {
-  font-family: 'Outfit', sans-serif;
-  font-weight: 700;
-  font-size: 0.92rem;
-  color: #fff;
-}
-.reviews-strip-author-role { font-size: 0.82rem; color: #8ea0c9; }
-
 .section { padding: 6.5rem 0; }
 .section-alt { background: var(--bg-alt); }
 
@@ -1071,34 +1018,29 @@ button { font-family: inherit; cursor: pointer; }
   max-width: 22rem;
 }
 
-/* ==========================================================================
-   CTA banner
-   ========================================================================== */
-
-.cta-banner {
+/* Dark gradient surface treatment (numbers/text/layout stay the same —
+   only the background and the colors needed to read on it change). */
+.section-dark {
   position: relative;
   overflow: hidden;
   background: linear-gradient(155deg, var(--navy-800) 0%, var(--navy) 55%, var(--navy-600) 100%);
-  padding: 6rem 0;
 }
-
-.cta-blob {
+.section-dark-blob {
   position: absolute;
   border-radius: 50%;
   filter: blur(80px);
 }
-.cta-blob-1 {
+.section-dark-blob-1 {
   width: 480px; height: 480px;
   top: -180px; left: 8%;
   background: radial-gradient(circle, rgba(46,137,225,0.35), transparent 70%);
 }
-.cta-blob-2 {
+.section-dark-blob-2 {
   width: 420px; height: 420px;
   bottom: -220px; right: 6%;
   background: radial-gradient(circle, rgba(46,137,225,0.22), transparent 70%);
 }
-
-.cta-mark {
+.section-dark-mark {
   position: absolute;
   width: 340px;
   height: 270px;
@@ -1108,19 +1050,14 @@ button { font-family: inherit; cursor: pointer; }
   opacity: 0.05;
 }
 
-.cta-title {
-  font-size: clamp(1.9rem, 3.4vw, 2.6rem);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: #fff;
-}
-.cta-text {
-  margin-top: 1rem;
-  color: #c7d4ee;
-  font-size: 1.08rem;
-  max-width: 32rem;
-  margin-left: auto;
-  margin-right: auto;
+.section-dark .section-title { color: #fff; }
+.section-dark .section-lead { color: #c7d4ee; }
+.section-dark .process-number { background: #fff; color: var(--navy); }
+.section-dark .process-title { color: #fff; }
+.section-dark .process-text { color: #c7d4ee; }
+.section-dark .process-row::before {
+  background: repeating-linear-gradient(to right, rgba(255,255,255,0.55) 0 8px, transparent 8px 16px);
+  opacity: 1;
 }
 
 /* ==========================================================================
@@ -1185,7 +1122,7 @@ a.contact-info-item:hover {
   position: relative;
   height: 100%;
   min-height: 420px;
-  background: var(--bg-alt);
+  background: #fff;
   border: 1px solid var(--border);
   border-radius: 22px;
   overflow: hidden;
